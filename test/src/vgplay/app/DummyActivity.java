@@ -1,13 +1,12 @@
 ﻿// Copyright (c) 2012-2013, https://github.com/rhcad/touchvg
 
-package vgtest.app;
+package vgplay.app;
 
 import java.lang.reflect.Constructor;
 
 import rhcad.touchvg.IGraphView;
 import rhcad.touchvg.IViewHelper;
 import rhcad.touchvg.ViewFactory;
-import vgtest.testview.TestFlags;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -25,7 +24,6 @@ public class DummyActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         Bundle bundle = getIntent().getExtras();
-        int flags = bundle.getInt("flags");
         View view = null;
 
         try {
@@ -44,25 +42,19 @@ public class DummyActivity extends Activity {
             e.printStackTrace();
         }
 
-        if ((flags & TestFlags.MODEL_SURFACE) != 0) {
-            this.setContentView(view);
-        } else {
-            // LinearLayout layout = new LinearLayout(this);
-            // layout.setOrientation(LinearLayout.VERTICAL);
-            final FrameLayout layout = new FrameLayout(this);
-            layout.setBackgroundResource(R.drawable.vg_translucent_bg); // 测试图片平铺
-            this.setContentView(layout);
+        final FrameLayout layout = new FrameLayout(this);
+        layout.setBackgroundResource(R.drawable.vg_translucent_bg); // 测试图片平铺
+        this.setContentView(layout);
 
-            if (view != null) {
-                final LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
-                        LayoutParams.MATCH_PARENT);
-                layout.addView(view, params);
+        if (view != null) {
+            final LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
+                    LayoutParams.MATCH_PARENT);
+            layout.addView(view, params);
 
-                if (view instanceof IGraphView) {
-                    final View dynview = ((IGraphView) view).createDynamicShapeView(this);
-                    if (dynview != null) {
-                        layout.addView(dynview, params);
-                    }
+            if (view instanceof IGraphView) {
+                final View dynview = ((IGraphView) view).createDynamicShapeView(this);
+                if (dynview != null) {
+                    layout.addView(dynview, params);
                 }
             }
         }

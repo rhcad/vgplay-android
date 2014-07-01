@@ -11,18 +11,10 @@ import vgtest.testview.TestFlags;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.widget.Toast;
-import democmds.core.DemoCmdsGate;
 
 public class GraphView1 extends StdGraphView implements IGraphView.OnFirstRegenListener {
     protected static final String PATH = "mnt/sdcard/TouchVG/";
     protected PlayingHelper mPlayHelper;
-
-    static {
-        System.loadLibrary("democmds");
-    }
 
     public GraphView1(Context context) {
         this(context, null);
@@ -50,25 +42,7 @@ public class GraphView1 extends StdGraphView implements IGraphView.OnFirstRegenL
             helper.setCommand("line");
         } else if (flags == TestFlags.LINES_CMD) {
             helper.setCommand("lines");
-        } else if (flags == TestFlags.HITTEST_CMD) {
-            int n = DemoCmdsGate.registerCmds(helper.cmdViewHandle());
-            helper.setCommand("hittest");
-            Log.d("Test", "DemoCmdsGate.registerCmds = " + n + ", " + helper.getCommand());
         }
-    }
-
-    @Override
-    public boolean onPreDoubleTap(MotionEvent e) {
-        int flags = ((Activity) getContext()).getIntent().getExtras().getInt("flags");
-        final IViewHelper helper = ViewFactory.createHelper(this);
-
-        if ((flags & TestFlags.SWITCH_CMD) != 0) {
-            helper.switchCommand();
-            Toast.makeText(getContext(), helper.getCommand(), Toast.LENGTH_SHORT).show();
-            return true;
-        }
-
-        return false;
     }
 
     public void onFirstRegen(IGraphView view) {

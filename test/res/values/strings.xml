@@ -1,8 +1,8 @@
 <resources>
 
-    <string name="app_name">TouchVG</string>
-    <string name="title_activity_main">TouchVG Views</string>
-    <string name="title_activity_dummy">TouchVG Dummy View</string>
+    <string name="app_name">VGPlayTest</string>
+    <string name="title_activity_main">VGPlayTest</string>
+    <string name="title_activity_dummy">TouchVGPlay</string>
 
     <string name="shape_too_small">图形太小，请重新绘制</string>
     <string name="shape1_deleted">已删除一个图形</string>

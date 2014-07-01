@@ -17,19 +17,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.PointF;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
 import android.widget.Toast;
-import democmds.core.DemoCmdsGate;
 
 public class SFGraphView1 extends SFGraphView implements IGraphView.OnFirstRegenListener {
     protected static final String PATH = "mnt/sdcard/TouchVG/";
     protected PlayingHelper mPlayHelper;
-
-    static {
-        System.loadLibrary("democmds");
-    }
 
     public SFGraphView1(Context context) {
         this(context, null);
@@ -67,36 +60,7 @@ public class SFGraphView1 extends SFGraphView implements IGraphView.OnFirstRegen
             helper.setCommand("line");
         } else if (flags == TestFlags.LINES_CMD) {
             helper.setCommand("lines");
-        } else if (flags == TestFlags.HITTEST_CMD) {
-            int n = DemoCmdsGate.registerCmds(helper.cmdViewHandle());
-            helper.setCommand("hittest");
-            Log.d("Test", "DemoCmdsGate.registerCmds = " + n + ", " + helper.getCommand());
         }
-    }
-
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-
-        int flags = ((Activity) getContext()).getIntent().getExtras().getInt("flags");
-        if ((flags & TestFlags.HAS_BACKDRAWABLE) != 0) {
-            ViewGroup layout = (ViewGroup) getParent();
-            this.setBackgroundDrawable(layout.getBackground());
-        }
-    }
-
-    @Override
-    public boolean onPreDoubleTap(MotionEvent e) {
-        int flags = ((Activity) getContext()).getIntent().getExtras().getInt("flags");
-        final IViewHelper helper = ViewFactory.createHelper(this);
-
-        if ((flags & TestFlags.SWITCH_CMD) != 0) {
-            helper.switchCommand();
-            Toast.makeText(getContext(), helper.getCommand(), Toast.LENGTH_SHORT).show();
-            return true;
-        }
-
-        return false;
     }
 
     public void onFirstRegen(IGraphView view) {

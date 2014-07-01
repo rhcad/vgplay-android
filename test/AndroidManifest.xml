@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="vgtest.app"
+    package="vgplay.app"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:allowBackup="false" >
         <activity
-            android:name=".MainActivity"
+            android:name="vgplay.app.MainActivity"
             android:label="@string/title_activity_main"
             android:configChanges="orientation|screenSize|keyboardHidden" >
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DummyActivity"
+            android:name="vgplay.app.DummyActivity"
             android:label="@string/title_activity_dummy"
             android:configChanges="orientation|screenSize|keyboardHidden" >
         </activity>

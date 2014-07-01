@@ -22,7 +22,7 @@
 					<folderInfo id="com.android.toolchain.gcc.743632905.975835379" name="/" resourcePath="">
 						<toolChain id="com.android.toolchain.gcc.1457077783" name="com.android.toolchain.gcc" nonInternalBuilderId="com.android.builder" superClass="com.android.toolchain.gcc">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="com.android.targetPlatform.354993689" isAbstract="false" superClass="com.android.targetPlatform"/>
-							<builder autoBuildTarget="" buildPath="${workspace_loc:/VGTest/Default}" cleanBuildTarget="clean" command="ndk-build" id="org.eclipse.cdt.build.core.internal.builder.648702640" incrementalBuildTarget="" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<builder autoBuildTarget="" buildPath="${workspace_loc:/VGPlayTest/Default}" cleanBuildTarget="clean" command="ndk-build" id="org.eclipse.cdt.build.core.internal.builder.648702640" incrementalBuildTarget="" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool id="com.android.gcc.compiler.1856430420" name="Android GCC Compiler" superClass="com.android.gcc.compiler">
 								<inputType id="com.android.gcc.inputType.1254883764" superClass="com.android.gcc.inputType"/>
 							</tool>
@@ -34,7 +34,7 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="VGTest.null.1391697401" name="VGTest"/>
+		<project id="VGPlayTest.null.1391697401" name="VGPlayTest"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
@@ -43,7 +43,7 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="1">
-		<resource resourceType="PROJECT" workspacePath="/VGTest"/>
+		<resource resourceType="PROJECT" workspacePath="/VGPlayTest"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

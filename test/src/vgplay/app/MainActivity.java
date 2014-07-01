@@ -1,6 +1,6 @@
 // Copyright (c) 2012-2013, https://github.com/rhcad/touchvg
 
-package vgtest.app;
+package vgplay.app;
 
 import vgtest.testview.ViewFactory;
 import android.os.Bundle;

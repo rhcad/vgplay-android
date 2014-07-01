@@ -13,7 +13,7 @@ public class TwoBoardViews extends LinearLayout {
 
     public TwoBoardViews(Context context) {
         super(context);
-        this.setOrientation(HORIZONTAL);
+        this.setOrientation(VERTICAL);
 
         final BoardView view1 = createView(context);
         final IViewHelper helper1 = ViewFactory.createHelper(view1);
