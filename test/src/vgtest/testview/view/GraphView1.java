@@ -6,6 +6,7 @@ import rhcad.touchvg.IGraphView;
 import rhcad.touchvg.IViewHelper;
 import rhcad.touchvg.ViewFactory;
 import rhcad.touchvg.view.StdGraphView;
+import rhcad.vgplay.PlayingHelper;
 import vgtest.testview.TestFlags;
 import android.app.Activity;
 import android.content.Context;
@@ -17,6 +18,7 @@ import democmds.core.DemoCmdsGate;
 
 public class GraphView1 extends StdGraphView implements IGraphView.OnFirstRegenListener {
     protected static final String PATH = "mnt/sdcard/TouchVG/";
+    protected PlayingHelper mPlayHelper;
 
     static {
         System.loadLibrary("democmds");
@@ -74,7 +76,12 @@ public class GraphView1 extends StdGraphView implements IGraphView.OnFirstRegenL
         final IViewHelper helper = ViewFactory.createHelper(view);
 
         if ((flags & TestFlags.RECORD) != 0) {
-            helper.startRecord(PATH + "record");
+            if ((flags & TestFlags.CMD_MASK) != 0) {
+                helper.startRecord(PATH + "record");
+            } else {
+                mPlayHelper = new PlayingHelper(this);
+                mPlayHelper.startPlay(PATH + "record");
+            }
         }
     }
 }

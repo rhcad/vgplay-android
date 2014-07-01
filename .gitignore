@@ -49,4 +49,3 @@ CppDepend*
 *.hh*
 *_wrap.cxx
 output
-*.so
