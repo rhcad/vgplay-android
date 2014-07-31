@@ -12,7 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-public class GraphView1 extends StdGraphView implements IGraphView.OnFirstRegenListener {
+public class GraphView1 extends StdGraphView {
     protected static final String PATH = "mnt/sdcard/TouchVG/";
     protected PlayingHelper mPlayHelper;
 
@@ -23,39 +23,38 @@ public class GraphView1 extends StdGraphView implements IGraphView.OnFirstRegenL
     public GraphView1(Context context, Bundle savedInstanceState) {
         super(context, savedInstanceState);
 
-        int flags = ((Activity) context).getIntent().getExtras().getInt("flags");
+        final int flags = ((Activity) context).getIntent().getExtras().getInt("flags");
         final IViewHelper helper = ViewFactory.createHelper(this);
 
         if ((flags & TestFlags.RAND_SHAPES) != 0) {
             helper.addShapesForTest();
         }
         if (savedInstanceState == null && (flags & TestFlags.RECORD) != 0) {
-            setOnFirstRegenListener(this);
+            setOnFirstRegenListener(new IGraphView.OnFirstRegenListener() {
+                public void onFirstRegen(IGraphView view) {
+                    if ((flags & TestFlags.CMD_MASK) != 0) {
+                        helper.startRecord(PATH + "record");
+                    } else {
+                        mPlayHelper = new PlayingHelper(view);
+                        mPlayHelper.startPlay(PATH + "record");
+                    }
+                }
+            });
         }
 
-        flags = flags & TestFlags.CMD_MASK;
-        if (flags == TestFlags.SELECT_CMD) {
+        switch (flags & TestFlags.CMD_MASK) {
+        case TestFlags.SELECT_CMD:
             helper.setCommand("select");
-        } else if (flags == TestFlags.SPLINES_CMD) {
+            break;
+        case TestFlags.SPLINES_CMD:
             helper.setCommand("splines");
-        } else if (flags == TestFlags.LINE_CMD) {
+            break;
+        case TestFlags.LINE_CMD:
             helper.setCommand("line");
-        } else if (flags == TestFlags.LINES_CMD) {
+            break;
+        case TestFlags.LINES_CMD:
             helper.setCommand("lines");
-        }
-    }
-
-    public void onFirstRegen(IGraphView view) {
-        int flags = ((Activity) getContext()).getIntent().getExtras().getInt("flags");
-        final IViewHelper helper = ViewFactory.createHelper(view);
-
-        if ((flags & TestFlags.RECORD) != 0) {
-            if ((flags & TestFlags.CMD_MASK) != 0) {
-                helper.startRecord(PATH + "record");
-            } else {
-                mPlayHelper = new PlayingHelper(this);
-                mPlayHelper.startPlay(PATH + "record");
-            }
+            break;
         }
     }
 }
