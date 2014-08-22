@@ -39,8 +39,7 @@ public class MainActivity extends ListActivity {
         int orientation = this.getResources().getConfiguration().orientation;
 
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-        }
-        else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+        } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
         }
     }
 }

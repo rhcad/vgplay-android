@@ -11,11 +11,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 
 public class DummyActivity extends Activity {
+    private static final String TAG = "vgdemo";
     private static final String FILEPATH = "mnt/sdcard/TouchVG";
     private IViewHelper mHelper;
 
@@ -39,7 +41,7 @@ public class DummyActivity extends Activity {
                 view = (View) c1.newInstance(new Object[] { this });
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.d(TAG, "onCreate", e);
         }
 
         final FrameLayout layout = new FrameLayout(this);
@@ -69,8 +71,7 @@ public class DummyActivity extends Activity {
         int orientation = this.getResources().getConfiguration().orientation;
 
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-        }
-        else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+        } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
         }
     }
 
