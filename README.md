@@ -93,12 +93,10 @@ public class PlayingHelper {
 Contributors and sponsors are welcome. You may translate, commit issues or pull requests on this Github site.
 To contribute, please follow the branching model outlined here: [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/).
 
-Welcome to the Chinese QQ group `192093613` to discuss and share.
-
 ## License
 
 This is an open source LGPL 2.1 licensed project. It uses the following open source projects:
 
-- [TouchVG](https://github.com/touchvg/vgandroid) (LGPL): Vector drawing framework for Android.
-- [TouchVGCore](https://github.com/touchvg/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
+- [vgandroid](https://github.com/rhcad/vgandroid) (LGPL): Vector drawing framework for Android.
+- [vgcore](https://github.com/rhcad/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
 - TouchVGPlay (NOT open source yet): Shape playing and animation framework based on TouchVG.

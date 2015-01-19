@@ -1,4 +1,4 @@
-// Copyright (c) 2014 Zhang Yungui, https://github.com/touchvg/touchvgplay
+// Copyright (c) 2014 Zhang Yungui, https://github.com/rhcad/vgplay-android
 
 package vgplay.testview;
 
