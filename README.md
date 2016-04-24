@@ -97,8 +97,8 @@ To contribute, please follow the branching model outlined here: [A successful Gi
 
 This is an open source BSD licensed project. It uses the following open source projects:
 
-- [vgandroid](https://github.com/rhcad/vgandroid) (LGPL): Vector drawing framework for Android.
-- [vgcore](https://github.com/rhcad/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
+- [vgandroid](https://github.com/rhcad/vgandroid) (BSD): Vector drawing framework for Android.
+- [vgcore](https://github.com/rhcad/vgcore) (BSD): Cross-platform vector drawing libraries using C++.
 - [TouchVGPlay][vgplay] (GPL): Shape playing and animation framework based on TouchVG.
 
 [vgplay]: https://github.com/rhcad/vgplay
