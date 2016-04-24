@@ -1,6 +1,6 @@
 # TouchVGPlay Demo for Android
 
-This is a unit test and example project for TouchVGPlay, which is a lightweight vector shape playing and animation framework based on TouchVG for Android.
+This is a unit test and example project for [TouchVGPlay][vgplay], which is a lightweight vector shape playing and animation framework based on TouchVG for Android.
 
 API (rhcad.vgplay.PlayingHelper):
 
@@ -95,8 +95,10 @@ To contribute, please follow the branching model outlined here: [A successful Gi
 
 ## License
 
-This is an open source LGPL 2.1 licensed project. It uses the following open source projects:
+This is an open source BSD licensed project. It uses the following open source projects:
 
 - [vgandroid](https://github.com/rhcad/vgandroid) (LGPL): Vector drawing framework for Android.
 - [vgcore](https://github.com/rhcad/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
-- TouchVGPlay (NOT open source yet): Shape playing and animation framework based on TouchVG.
+- [TouchVGPlay][vgplay] (GPL): Shape playing and animation framework based on TouchVG.
+
+[vgplay]: https://github.com/rhcad/vgplay
