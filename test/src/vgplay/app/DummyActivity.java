@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2012-2013, https://github.com/rhcad/touchvg
+// Copyright (c) 2012-2013, https://github.com/rhcad/touchvg
 
 package vgplay.app;
 
@@ -45,7 +45,7 @@ public class DummyActivity extends Activity {
         }
 
         final FrameLayout layout = new FrameLayout(this);
-        layout.setBackgroundResource(R.drawable.vg_translucent_bg); // 测试图片平铺
+        layout.setBackgroundResource(R.drawable.vg_translucent_bg); // Test picture tile
         this.setContentView(layout);
 
         if (view != null) {
